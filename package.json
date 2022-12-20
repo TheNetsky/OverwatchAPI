@@ -18,8 +18,7 @@
   "scripts": {
     "dev": "nodemon ./index.ts"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Netsky",
   "license": "ISC",
-  "description": ""
+  "description": "Shitty Overwatch 2 API!"
 }
