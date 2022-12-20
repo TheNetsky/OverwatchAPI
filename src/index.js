@@ -35,7 +35,7 @@ app.get('/ow', async (req, res) => {
     if (req.query.user) {
         const tag = (0, Data_1.validateUserTag)(req.query.user);
         if (!tag)
-            return res.status(401).json({ error: 'Invalid BattleNet format!, should be Example-0101' }).end();
+            return res.status(401).json({ error: 'Invalid BattleNet format!, should be Example-0000' }).end();
         const data = await (0, Parser_1.playerData)(tag);
         if (data.errorCode) {
             return res.status(data.errorCode).json({ message: data.message });

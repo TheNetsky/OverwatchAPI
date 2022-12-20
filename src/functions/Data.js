@@ -18,7 +18,6 @@ function validateUserTag(tag) {
 }
 exports.validateUserTag = validateUserTag;
 async function getData(tag) {
-    // https://overwatch.blizzard.com/en-us/career/Netsky-21789/
     try {
         const request = {
             url: `https://overwatch.blizzard.com/en-us/career/${tag}`,
