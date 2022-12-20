@@ -16,6 +16,7 @@
     "noImplicitOverride": false,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
-    "strictPropertyInitialization": true
+    "strictPropertyInitialization": true,
+    "outDir": "src/compiled/"
   }
 }
