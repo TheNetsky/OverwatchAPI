@@ -13,10 +13,12 @@
     "tsconfig-paths": "^4.1.1"
   },
   "name": "overwatchapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.ts"
+    "dev": "nodemon ./index.ts",
+    "build": "npx tsc -build tsconfig.json",
+    "start" : "node compiled/src/index.js"
   },
   "author": "Netsky",
   "license": "ISC",

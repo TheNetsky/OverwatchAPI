@@ -17,6 +17,6 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
-    "outDir": "src/compiled/"
+    "outDir": "compiled/"
   }
 }

@@ -9,7 +9,7 @@ const app = express()
 app.get('/ow', async (req, res) => {
     if (req.query.user) {
         const tag = validateUserTag(req.query.user as string)
-        if (!tag) return res.status(401).json({ error: 'Invalid BattleNet format!, should be Example-0101' }).end()
+        if (!tag) return res.status(401).json({ error: 'Invalid BattleNet format!, should be Example-0000' }).end()
 
         const data: any = await playerData(tag)
         if (data.errorCode) {
