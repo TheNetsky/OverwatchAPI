@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+* {
+    font-family: 'Open Sans', 'serif';
+}
+
+html {
+    background-color: gray;
+}
+
+.main {
+    text-align: center;
+}
+
+.title {
+    color: rgb(240,100,12);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.results {
+    text-align: center;
+}
+
+img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 100px;
+}

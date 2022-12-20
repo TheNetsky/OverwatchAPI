@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <img class='logo'
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/1200px-Overwatch_2_logo.svg.png">
+
+    <div class='main'>
+        <h1 class='title'> Get Overwatch Stats! </h1>
+
+        <span class="bold">Enter Battle.net Tag: </span><input id="BnetInput" name="text" type="text"
+            placeholder="Example#0000" />
+
+        <button onclick="getData({json: false})">Get Stats Here!</button>
+        <button onclick="getData({json: true})">Go to JSON Data!</button>
+    </div>
+    <p>
+
+    <div class='results' id="responseBox"></div>
+</body>
+
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <script>
+        function getData({ json = false }) {
+            const inputValue = document.getElementById("BnetInput").value.replace("#", "-")
+
+            if (!inputValue) {
+                alert("You didn't provide a Battle.net name!")
+                return
+            } else {
+                if (!inputValue.includes('-')) {
+                    alert("You provided an invalid Battle.net tag!")
+                    return
+                } else {
+                    const splitTag = inputValue.split('-')
+                    if (isNaN(Number(splitTag[1].replace('/', '')))) {
+                        alert("You provided an invalid Battle.net tag!")
+                        return
+                    }
+                }
+            }
+
+            if (json) {
+                return document.location = `ow/?user=${inputValue}`
+            }
+
+
+            axios.get(`ow/?user=${inputValue}`).then(function (response) {
+                console.log(response)
+                const user = response.data.user
+
+                document.getElementById('responseBox').innerHTML = `
+                <img src=${user.icon}><br>
+                <strong>Tag:</strong> ${user.tag}<br>
+                <strong>Endorsement Level:</strong> ${user.endorsementLevel}<br>
+                <strong>Title:</strong> ${user.title}<br>
+                `
+
+            }).catch(e => {
+                document.getElementById('responseBox').innerHTML = `${e} 😢`
+            })
+
+        }
+
+    </script>
+</head>
+
+</html>
